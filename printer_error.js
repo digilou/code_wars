@@ -29,8 +29,9 @@ function printerError(s) {
     var error = 0;
     // iterate thru array to evalute regExp
     for (var i = 0; i < s_array.length; i++){
-      if (s_array[i] != regex){
-        error = s_array[i].length - 1;
+      if (s_array[i] == regex){
+        // error += 1; 56/56
+        // error = s_array[i].length - 1; 0/56
       }
     }
     // join array back into one string
