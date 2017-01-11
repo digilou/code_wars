@@ -21,22 +21,20 @@ The string has a length greater or equal to one and contains only letters from a
 
 // my initial thoughts and attempt
 function printerError(s) {
-    // regExp comparison
-    var regex = /\c[a-m]/;
     // split string into array
-    var s_array = regex.split(s);
+    var s_array = s.split("");
+    // regExp comparison
+    var regex = /[a-m]+/g;
     // placeholder for error messages
     var error = 0;
-    // iterate thru array to evalute regEx
+    // iterate thru array to evalute regExp
     for (var i = 0; i < s_array.length; i++){
       if (s_array[i] != regex){
-        error += 1;
-      } else{
-        return error;
+        error = s_array[i].length - 1;
       }
     }
     // join array back into one string
-      s_array.join("");
+    s_array.join("");
     // return results as a string
     return error.toString() + "/" + s_array.length.toString();
 }
